@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SchemeAI - AI-powered, transparent rule-based Government Scheme Eligibility Checker for Indian citizens. Find verified schemes, required documents, and official application portals.">
+  <meta name="theme-color" content="#0a2540">
+  <link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SchemeAI">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>SchemeAI - India Government Scheme Eligibility Checker</title>
+  
+   <!-- Stylesheets -->
+  <link rel="stylesheet" href="icons/css/styles.css">
+  
+
+  
+  
+  <!-- Favicon / SVG Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+</head>
+<body>
+
+  <!-- Accessible Skip Navigation -->
+  <a href="#checker-section" class="skip-link">Skip to Eligibility Checker</a>
+
+  <!-- Top Tricolor Bar -->
+  <div class="top-tricolor-bar" aria-hidden="true"></div>
+
+  <!-- Sample Data Notice Bar -->
+  <aside class="sample-banner" role="complementary" aria-label="Sample Data Notice">
+    <div class="container">
+      <span aria-hidden="true">ℹ️</span>
+      <span id="txt-sampleDataNotice">Sample Data Notice: All schemes displayed are verified samples modeled on real Government of India guidelines. No government authority endorsement is implied.</span>
+    </div>
+  </aside>
+
+  <!-- Site Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a href="#home" class="brand" aria-label="SchemeAI Home">
+        <div class="brand-emblem" aria-hidden="true">🏛️</div>
+        <div class="brand-text">
+          <span class="brand-title">Scheme<span>AI</span></span>
+          <span class="brand-tagline" id="txt-navTagline">India Gov Scheme Eligibility Checker</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#home" class="active" id="txt-navHome">Home</a></li>
+          <li><a href="#checker-section" id="txt-navChecker">Check Eligibility</a></li>
+          <li><a href="#explore-section" id="txt-navExplore">Explore Schemes</a></li>
+          <li><a href="#features-section" id="txt-navFeatures">Features</a></li>
+          <li><a href="#about-section" id="txt-navAbout">About</a></li>
+          <li><a href="#contact-section" id="txt-navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Lang switch & CTA) -->
+      <div class="nav-actions">
+        <button type="button" class="btn-lang" id="btn-language-toggle" aria-label="Switch Language to Hindi">
+          <span aria-hidden="true">🌐</span>
+          <span id="txt-btnLanguage">हिन्दी</span>
+        </button>
+        <a href="#checker-section" class="btn-primary-sm" id="txt-btnStartCheckingNav">Start Checking</a>
+        <button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+   <main id="main-content">
+   
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-text-content">
+            <div class="hero-badge">
+              <span id="txt-heroBadge">🇮🇳 Free Public Citizen Service · 100% Free · No Registration Required</span>
+            </div>
+            
+            <h1 class="hero-title">
+              <span id="txt-heroTitle">Find Government Schemes You Are Actually Eligible For</span>
+            </h1>
+
+            <p class="hero-subtitle" id="txt-heroSubtitle">
+              Navigating India's welfare landscape can be overwhelming. SchemeAI uses transparent, rule-based matching to instantly show you verified welfare schemes, benefits, documents needed, and direct official application portals.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#checker-section" class="btn-hero-primary" id="btn-hero-checker">
+                <span id="txt-btnStartChecking">Start Checking Eligibility</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#explore-section" class="btn-hero-secondary" id="btn-hero-explore">
+                <span id="txt-btnExploreAll">Browse All Schemes</span>
+              </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <span class="stat-num">12+</span>
+                <span class="stat-label" id="txt-heroStat1">Verified Schemes</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label" id="txt-heroStat2">Rule Transparency</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">0</span>
+                <span class="stat-label" id="txt-heroStat3">Data Stored</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">Direct</span>
+                <span class="stat-label" id="txt-heroStat4">Official Gov Portals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Preview Card -->
+          <div class="hero-visual-card" aria-hidden="true">
+            <div class="sample-schemes-preview">
+              <div class="preview-badge-header">
+                <strong style="color: var(--primary-navy); font-size: 0.95rem;" id="txt-liveShowcaseTitle">Live Schemes Showcase</strong>
+                <span class="preview-pill">Verified Rules</span>
+              </div>
+              
+              <div class="preview-item success">
+                <div class="preview-icon">🌾</div>
+                <div class="preview-meta">
+                  <h4>PM Kisan Samman Nidhi</h4>
+                  <p>₹6,000 / year direct bank transfer for farmer families</p>
+                </div>
+              </div>
+
+              <div class="preview-item">
+                <div class="preview-icon">🩺</div>
+                <div class="preview-meta">
+                  <h4>Ayushman Bharat (PM-JAY)</h4>
+                  <p>₹5 Lakh cashless health cover for vulnerable families</p>
+                </div>
+              </div>
+
+              <div class="preview-item amber">
+                <div class="preview-icon">🎓</div>
+                <div class="preview-meta">
+                  <h4>AICTE Pragati Scholarship</h4>
+                  <p>₹50,000 / year support for female technical students</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Checker Section -->
+    <section class="section section-alt" id="checker-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-checkerHeading">Citizen Eligibility Assessment</h2>
+          <p id="txt-checkerSubtitle">
+            Enter your demographic and economic details below. Our transparent engine checks your profile against official scheme criteria in real time without sending your personal data to any external server.
+          </p>
+        </div>
+
+        <div class="checker-box">
+
+          <!-- Sample Quick Fill Bar -->
+          <div class="sample-fill-bar">
+            <span id="txt-trySampleProfiles">⚡ Try Sample Profiles:</span>
+            <div class="sample-fill-buttons">
+              <button type="button" class="btn-sample" id="btn-fill-farmer">
+                <span id="txt-btnFillSample">Fill Sample Profile (Farmer)</span>
+              </button>
+              <button type="button" class="btn-sample" id="btn-fill-student">
+                <span id="txt-btnFillSampleStudent">Fill Sample Profile (Student)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Eligibility Form -->
+          <form id="eligibility-form" novalidate>
+            <div class="form-grid">
+
+              <!-- Full Name (Optional) -->
+              <div class="form-group">
+                <label for="input-name" class="form-label">
+                  <span id="txt-labelName">Full Name (Optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="input-name" 
+                  name="name" 
+                  class="form-input" 
+                  placeholder="e.g. Ramesh Kumar"
+                  autocomplete="name"
+                >
+                <span class="form-help" id="txt-helpName">Used only to personalize your eligibility report.</span>
+              </div>
+
+              <!-- Age -->
+              <div class="form-group">
+                <label for="input-age" class="form-label">
+                  <span><span id="txt-labelAge">Age (in years)</span> <span class="req">*</span></span>
+                </label>
+                <input 
+                  type="number" 
+                  id="input-age" 
+                  name="age" 
+                  class="form-input" 
+                  placeholder="e.g. 28" 
+                  min="0" 
+                  max="100" 
+                  required
+                >
+                <span class="form-help" id="txt-helpAge">Must be a valid age between 0 and 100.</span>
+                <span class="error-text" id="err-age">Please enter a valid age between 0 and 100.</span>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group">
+                <label for="select-gender" class="form-label">
+                  <span><span id="txt-labelGender">Gender</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-gender" name="gender" class="form-select" required>
+                  <option value="" id="opt-selectGender">-- Select Gender --</option>
+                  <option value="Female" id="opt-female">Female</option>
+                  <option value="Male" id="opt-male">Male</option>
+                  <option value="Transgender" id="opt-transgender">Transgender / Other</option>
+                </select>
+                <span class="error-text" id="err-gender">Please select your gender.</span>
+              </div>
+
+              <!-- State / Domicile -->
+              <div class="form-group">
+                <label for="select-state" class="form-label">
+                  <span><span id="txt-labelState">State / Union Territory</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-state" name="state" class="form-select" required>
+                  <option value="" id="opt-selectState">-- Select State / UT --</option>
+                  <!-- Populated dynamically via JS -->
+                </select>
+                <span class="error-text" id="err-state">Please select your state or union territory.</span>
+              </div>
+
+              <!-- Social Category -->
+              <div class="form-group">
+                <label for="select-category" class="form-label">
+                  <span><span id="txt-labelCategory">Social Category</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-category" name="category" class="form-select" required>
+                  <option value="" id="opt-selectCategory">-- Select Category --</option>
+                  <option value="General" id="opt-general">General (Open)</option>
+                  <option value="OBC" id="opt-obc">OBC (Other Backward Class)</option>
+                  <option value="SC" id="opt-sc">SC (Scheduled Caste)</option>
+                  <option value="ST" id="opt-st">ST (Scheduled Tribe)</option>
+                  <option value="EWS" id="opt-ews">EWS (Economically Weaker Section)</option>
+                </select>
+                <span class="error-text" id="err-category">Please select your social category.</span>
+              </div>
+
+              <!-- Occupation -->
+              <div class="form-group">
+                <label for="select-occupation" class="form-label">
+                  <span><span id="txt-labelOccupation">Current Occupation</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-occupation" name="occupation" class="form-select" required>
+                  <option value="" id="opt-selectOccupation">-- Select Occupation --</option>
+                  <option value="Farmer" id="opt-farmer">Farmer / Agriculture</option>
+                  <option value="Student" id="opt-student">Student</option>
+                  <option value="Self-Employed / Entrepreneur" id="opt-selfEmployed">Self-Employed / Entrepreneur</option>
+                  <option value="Salaried Employee" id="opt-salaried">Salaried Employee</option>
+                  <option value="Daily Wage / Informal Worker" id="opt-dailyWage">Daily Wage / Informal Worker</option>
+                  <option value="Unemployed" id="opt-unemployed">Unemployed Youth</option>
+                  <option value="Homemaker" id="opt-homemaker">Homemaker</option>
+                  <option value="Other" id="opt-otherOcc">Other / Gig Worker</option>
+                </select>
+                <span class="error-text" id="err-occupation">Please select your primary occupation.</span>
+              </div>
+
+              <!-- Annual Family Income -->
+              <div class="form-group">
+                <label for="input-income" class="form-label">
+                  <span><span id="txt-labelIncome">Annual Family Income (in ₹ INR)</span> <span class="req">*</span></span>
+                </label>
+                <input 
+                  type="number" 
+                  id="input-income" 
+                  name="annualIncome" 
+                  class="form-input" 
+                  placeholder="e.g. 180000" 
+                  min="0" 
+                  step="1000" 
+                  required
+                >
+                <div class="preset-buttons" aria-label="Income Presets">
+                  <button type="button" class="btn-preset" data-income="120000" id="preset-1">&lt; ₹1.5 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="240000" id="preset-2">&lt; ₹2.5 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="480000" id="preset-3">&lt; ₹5.0 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="750000" id="preset-4">&lt; ₹8.0 Lakh</button>
+                </div>
+                <span class="form-help" id="txt-helpIncome">Total gross family income per year before taxes.</span>
+                <span class="error-text" id="err-income">Please enter a valid positive income figure.</span>
+              </div>
+
+              <!-- Education Level -->
+              <div class="form-group">
+                <label for="select-education" class="form-label">
+                  <span><span id="txt-labelEducation">Highest Education Level</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-education" name="educationLevel" class="form-select" required>
+                  <option value="" id="opt-selectEducation">-- Select Education Level --</option>
+                  <option value="None" id="opt-eduNone">None / Below 10th</option>
+                  <option value="10th Pass" id="opt-edu10th">10th Pass</option>
+                  <option value="12th Pass" id="opt-edu12th">12th Pass</option>
+                  <option value="Diploma / ITI" id="opt-eduDiploma">Diploma / ITI</option>
+                  <option value="Graduate" id="opt-eduGraduate">Graduate (B.A., B.Sc., B.Com., etc.)</option>
+                  <option value="Post-Graduate" id="opt-eduPostGraduate">Post-Graduate or Higher</option>
+                </select>
+                <span class="error-text" id="err-education">Please select your education qualification.</span>
+              </div>
+
+              <!-- Technical Degree Status -->
+              <div class="form-group full-width">
+                <label for="select-technical" class="form-label">
+                  <span><span id="txt-labelTechnicalDegree">Enrolled in or holds an AICTE/UGC Technical Degree / Diploma?</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-technical" name="hasTechnicalDegree" class="form-select" required>
+                  <option value="false" id="opt-techNo">No (General / Humanities / Commerce)</option>
+                  <option value="true" id="opt-techYes">Yes (Engineering, Technology, Polytechnic)</option>
+                </select>
+                <span class="error-text" id="err-technical">Please select technical degree status.</span>
+              </div>
+
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+              <button type="reset" class="btn-reset" id="btn-reset-form">
+                <span id="txt-btnResetForm">Reset Form</span>
+              </button>
+              <button type="submit" class="btn-submit" id="btn-submit-form">
+                <span aria-hidden="true">🔍</span>
+                <span id="txt-btnCheckNow">Check My Scheme Eligibility</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Evaluation Results Display (Revealed upon form submission) -->
+        <div class="results-container" id="results-display" role="region" aria-live="polite">
+          
+          <div style="margin-top: 3.5rem;">
+            <div class="section-header">
+              <h2 id="txt-resultsHeading">Eligibility Evaluation Results</h2>
+              <p id="txt-resultsSubtitle">Based on the details provided, here is your transparent scheme-by-scheme breakdown.</p>
+            </div>
+
+            <!-- Summary Card -->
+            <div class="results-summary-card">
+              <div class="summary-header">
+                <div class="summary-user">
+                  <h3 id="summary-citizen-name">Citizen Profile Assessment</h3>
+                  <p id="summary-citizen-demographics">Demographics & economic indicators evaluated</p>
+                </div>
+                <div class="summary-actions">
+                  <button type="button" class="btn-outline-white" id="btn-print-report">
+                    <span aria-hidden="true">🖨️</span>
+                    <span id="txt-btnPrintReport">Print / Save PDF Report</span>
+                  </button>
+                  <button type="button" class="btn-outline-white" id="btn-modify-details">
+                    <span aria-hidden="true">✏️</span>
+                    <span id="txt-btnEditDetails">Modify Details</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Metric Counts -->
+              <div class="summary-metrics-grid">
+                <div class="metric-card eligible">
+                  <div class="metric-num" id="metric-eligible-count">0</div>
+                  <div class="metric-label" id="txt-tagEligibleCount">Likely Eligible</div>
+                </div>
+                <div class="metric-card partial">
+                  <div class="metric-num" id="metric-partial-count">0</div>
+                  <div class="metric-label" id="txt-tagPartialCount">Partial / Conditional</div>
+                </div>
+                <div class="metric-card ineligible">
+                  <div class="metric-num" id="metric-ineligible-count">0</div>
+                  <div class="metric-label" id="txt-tagIneligibleCount">Currently Ineligible</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mandatory Statutory Preliminary Assessment Disclaimer -->
+            <div class="preliminary-callout" role="alert">
+              <div class="callout-icon" aria-hidden="true">⚠️</div>
+              <div class="callout-body">
+                <h4 id="txt-preliminaryDisclaimerTitle">Preliminary Assessment Notice</h4>
+                <p id="txt-preliminaryDisclaimerText">
+                  This eligibility assessment is calculated purely using transparent rule-based logic matching your self-declared details against official scheme guidelines. <strong>SchemeAI does not guarantee benefits</strong>; formal eligibility, scrutiny of genuine documents, and final sanction are determined solely by the competent Government department upon formal application.
+                </p>
+              </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="results-filter-tabs" role="tablist">
+              <button type="button" class="result-tab-btn active" data-filter="all" id="tab-res-all" role="tab" aria-selected="true">
+                <span id="txt-filterTabAll">All Schemes</span>
+                <span class="tab-badge" id="badge-tab-all">12</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="eligible" id="tab-res-eligible" role="tab" aria-selected="false">
+                <span id="txt-filterTabEligible">Likely Eligible</span>
+                <span class="tab-badge" id="badge-tab-eligible">0</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="partial" id="tab-res-partial" role="tab" aria-selected="false">
+                <span id="txt-filterTabPartial">Partial Match</span>
+                <span class="tab-badge" id="badge-tab-partial">0</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="ineligible" id="tab-res-ineligible" role="tab" aria-selected="false">
+                <span id="txt-filterTabIneligible">Ineligible</span>
+                <span class="tab-badge" id="badge-tab-ineligible">0</span>
+              </button>
+            </div>
+
+            <!-- Schemes Cards Grid -->
+            <div class="schemes-grid" id="evaluated-schemes-container">
+              <!-- Rendered dynamically -->
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Explore All Schemes Section -->
+    <section class="section" id="explore-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-exploreHeading">Explore All Central Government Schemes</h2>
+          <p id="txt-exploreSubtitle">
+            Browse our curated repository of verified flagship schemes across Agriculture, Healthcare, Education, and Welfare.
+          </p>
+        </div>
+
+        <!-- Controls: Search & Category Filter -->
+        <div class="explore-controls-card">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="search" 
+              id="explore-search-input" 
+              class="search-input" 
+              placeholder="Search by scheme name, keyword (e.g. loan, scholarship, farmer)..."
+              aria-label="Search government schemes"
+            >
+          </div>
+
+          <!-- Category Chips -->
+          <div class="category-chips-list" id="explore-category-chips">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Explore Grid -->
+        <div class="schemes-grid" id="explore-schemes-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section section-alt" id="features-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-featHeading">Why SchemeAI?</h2>
+          <p id="txt-featSubtitle">Empowering citizens with explainable, accessible public scheme discovery.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🔍</div>
+            <h3 id="txt-feat1Title">100% Rule Transparency</h3>
+            <p id="txt-feat1Desc">No opaque or fabricated AI outputs. Every recommendation clearly displays the exact rule condition, your entered detail, and why it passed or failed.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🛡️</div>
+            <h3 id="txt-feat2Title">No User Tracking / 100% Free</h3>
+            <p id="txt-feat2Desc">No phone OTPs, no passwords, no fee. Evaluation runs entirely inside your browser, keeping your sensitive economic data confidential.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🏛️</div>
+            <h3 id="txt-feat3Title">Authentic Official Portals</h3>
+            <p id="txt-feat3Desc">Direct outbound links to verified .gov.in, .nic.in, and .org.in official portals. Never fall prey to fake intermediaries or scam agents.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🌐</div>
+            <h3 id="txt-feat4Title">Bilingual Experience</h3>
+            <p id="txt-feat4Desc">Easily switch between English and Hindi at any time with a single click without losing your active form details.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about-section">
+      <div class="container">
+        <div class="about-card">
+          <h3 id="txt-aboutHeading">About SchemeAI Initiative</h3>
+          <p id="txt-aboutText1">
+            SchemeAI is an independent citizen-centric project built to bridge the awareness gap between eligible Indian beneficiaries and public welfare schemes.
+          </p>
+          <p id="txt-aboutText2">
+            Every year, thousands of crores in public welfare funds remain underutilized because deserving citizens are unaware of schemes or find eligibility rules convoluted. SchemeAI translates complex ministerial criteria into a simple, actionable digital checker.
+          </p>
+
+          <div class="legal-box">
+            <h4 id="txt-legalDisclaimerTitle">Statutory Disclaimer</h4>
+            <p id="txt-legalDisclaimerText">
+              SchemeAI is a public informational tool. It is NOT affiliated with, authorized by, or an official service of the Government of India or any State Government. Final eligibility, entitlement, and sanction of any scheme are decided exclusively by the competent designated statutory authorities upon formal submission of required applications and authentic documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Citizen Helpdesk Section -->
+    <section class="section section-alt" id="contact-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-contactHeading">Contact & Citizen Helpdesk</h2>
+          <p id="txt-contactSubtitle">Have questions, suggestions, or want to report an updated scheme guideline?</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <form id="contact-form" novalidate>
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-name" class="form-label" id="txt-contactName">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" required placeholder="e.g. Ankit Verma">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-email" class="form-label" id="txt-contactEmail">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" required placeholder="e.g. ankit@example.com">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-subject" class="form-label" id="txt-contactSubject">Subject / Scheme Inquiry</label>
+                <input type="text" id="contact-subject" class="form-input" required placeholder="e.g. Query regarding PM-KISAN rules">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="contact-message" class="form-label" id="txt-contactMessage">Your Message</label>
+                <textarea id="contact-message" class="form-input" style="height: 120px; padding: 0.75rem 1rem; resize: vertical;" required placeholder="How can we assist you?"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit" style="width: 100%;">
+                <span id="txt-btnSendMessage">Submit Message</span>
+              </button>
+
+              <div class="contact-success-banner" id="contact-success-box" role="alert">
+                <span id="txt-contactSuccess">Thank you for reaching out! In a live environment, your inquiry is routed to our volunteer support team.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Citizen Helplines -->
+          <div class="contact-info-card">
+            <div class="helplines-card">
+              <h3 id="txt-helplinesTitle">National Citizen Helplines</h3>
+              
+              <div class="helpline-item">
+                <span class="helpline-icon">📞</span>
+                <span id="txt-helpline1">National Consumer Helpline: 1915 / 1800-11-4000</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🩺</span>
+                <span id="txt-helpline2">Ayushman Bharat National Call Centre: 14555</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🌾</span>
+                <span id="txt-helpline3">Kisan Call Centre: 1800-180-1551</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🛡️</span>
+                <span id="txt-helpline4">Cyber Fraud Helpline: 1930</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 750; color: var(--primary-navy); margin-bottom: 0.5rem;">💡 Safe Internet Tips for Citizens</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+                Always verify that government websites end in <strong>.gov.in</strong> or <strong>.nic.in</strong>. Government portals never demand application processing fees through personal UPI handles or QR codes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Detailed Scheme Match Modal -->
+  <div class="modal-overlay" id="scheme-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-scheme-title">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <h3 id="modal-scheme-title">Scheme Name</h3>
+          <p id="modal-scheme-ministry">Ministry / Department</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-btn-close" aria-label="Close dialog">×</button>
+      </div>
+
+      <!-- Modal Tabs -->
+      <div class="modal-tabs" role="tablist">
+        <button type="button" class="modal-tab-btn active" data-tab="criteria" id="modal-tab-criteria" role="tab" aria-selected="true">
+          <span id="txt-modalCriteriaTab">Why This Matches / Fails</span>
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="docs" id="modal-tab-docs" role="tab" aria-selected="false">
+          <span id="txt-modalDocumentsTab">Documents Required</span>
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="disqualifiers" id="modal-tab-disqualifiers" role="tab" aria-selected="false">
+          <span id="txt-modalDisqualifiersTab">Disqualifiers & Rules</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- Tab 1: Criteria Breakdown -->
+        <div class="modal-tab-pane active" id="pane-criteria">
+          <div class="criteria-list" id="modal-criteria-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Required Documents -->
+        <div class="modal-tab-pane" id="pane-docs">
+          <ul class="docs-list" id="modal-docs-container">
+            <!-- Dynamically populated -->
+          </ul>
+        </div>
+
+        <!-- Tab 3: Disqualifiers -->
+        <div class="modal-tab-pane" id="pane-disqualifiers">
+          <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--danger); margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; font-weight: 750; color: var(--danger); margin-bottom: 0.5rem;" id="txt-disqualifiersHeading">Key Disqualification Conditions:</h4>
+            <ul id="modal-disqualifiers-container" style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-main); display: flex; flex-direction: column; gap: 0.4rem;">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 1rem 1.25rem;">
+            <h5 style="font-size: 0.88rem; font-weight: 700; color: #1e40af; margin-bottom: 0.25rem;" id="txt-authorityNoticeTitle">Authoritative Source & Application Timeline:</h5>
+            <p style="font-size: 0.82rem; color: #1e3a8a; margin: 0; line-height: 1.5;" id="modal-source-and-deadline-text"></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-close" id="modal-btn-dismiss">
+          <span id="txt-modalClose">Close</span>
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-apply" id="modal-link-official">
+          <span id="txt-btnApplyOfficial">Official Application Portal</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>SchemeAI</h4>
+          <p id="txt-footerTagline">Transparent Public Scheme Discovery for a Self-Reliant India (AtmaNirbhar Bharat).</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#checker-section">Check Eligibility</a></li>
+          <li><a href="#explore-section">Explore Schemes</a></li>
+          <li><a href="#about-section">Statutory Disclaimer</a></li>
+          <li><a href="#contact-section">Helpdesk</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <p id="txt-footerCopy">Built with standard Open Web Technologies (HTML, CSS, JS). Free & Open Access.</p>
+        <a href="#home" id="txt-footerBackToTop">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/schemes-data.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/eligibility-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+  
+  <!-- Favicon / SVG Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+</head>
+<body>
+
+  <!-- Accessible Skip Navigation -->
+  <a href="#checker-section" class="skip-link">Skip to Eligibility Checker</a>
+
+  <!-- Top Tricolor Bar -->
+  <div class="top-tricolor-bar" aria-hidden="true"></div>
+
+  <!-- Sample Data Notice Bar -->
+  <aside class="sample-banner" role="complementary" aria-label="Sample Data Notice">
+    <div class="container">
+      <span aria-hidden="true">ℹ️</span>
+      <span id="txt-sampleDataNotice">Sample Data Notice: All schemes displayed are verified samples modeled on real Government of India guidelines. No government authority endorsement is implied.</span>
+    </div>
+  </aside>
+
+  <!-- Site Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a href="#home" class="brand" aria-label="SchemeAI Home">
+        <div class="brand-emblem" aria-hidden="true">🏛️</div>
+        <div class="brand-text">
+          <span class="brand-title">Scheme<span>AI</span></span>
+          <span class="brand-tagline" id="txt-navTagline">India Gov Scheme Eligibility Checker</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#home" class="active" id="txt-navHome">Home</a></li>
+          <li><a href="#checker-section" id="txt-navChecker">Check Eligibility</a></li>
+          <li><a href="#explore-section" id="txt-navExplore">Explore Schemes</a></li>
+          <li><a href="#features-section" id="txt-navFeatures">Features</a></li>
+          <li><a href="#about-section" id="txt-navAbout">About</a></li>
+          <li><a href="#contact-section" id="txt-navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Lang switch & CTA) -->
+      <div class="nav-actions">
+        <button type="button" class="btn-lang" id="btn-language-toggle" aria-label="Switch Language to Hindi">
+          <span aria-hidden="true">🌐</span>
+          <span id="txt-btnLanguage">हिन्दी</span>
+        </button>
+        <a href="#checker-section" class="btn-primary-sm" id="txt-btnStartCheckingNav">Start Checking</a>
+        <button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+   <main id="main-content">
+   
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-text-content">
+            <div class="hero-badge">
+              <span id="txt-heroBadge">🇮🇳 Free Public Citizen Service · 100% Free · No Registration Required</span>
+            </div>
+            
+            <h1 class="hero-title">
+              <span id="txt-heroTitle">Find Government Schemes You Are Actually Eligible For</span>
+            </h1>
+
+            <p class="hero-subtitle" id="txt-heroSubtitle">
+              Navigating India's welfare landscape can be overwhelming. SchemeAI uses transparent, rule-based matching to instantly show you verified welfare schemes, benefits, documents needed, and direct official application portals.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#checker-section" class="btn-hero-primary" id="btn-hero-checker">
+                <span id="txt-btnStartChecking">Start Checking Eligibility</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#explore-section" class="btn-hero-secondary" id="btn-hero-explore">
+                <span id="txt-btnExploreAll">Browse All Schemes</span>
+              </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <span class="stat-num">12+</span>
+                <span class="stat-label" id="txt-heroStat1">Verified Schemes</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label" id="txt-heroStat2">Rule Transparency</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">0</span>
+                <span class="stat-label" id="txt-heroStat3">Data Stored</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">Direct</span>
+                <span class="stat-label" id="txt-heroStat4">Official Gov Portals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Preview Card -->
+          <div class="hero-visual-card" aria-hidden="true">
+            <div class="sample-schemes-preview">
+              <div class="preview-badge-header">
+                <strong style="color: var(--primary-navy); font-size: 0.95rem;" id="txt-liveShowcaseTitle">Live Schemes Showcase</strong>
+                <span class="preview-pill">Verified Rules</span>
+              </div>
+              
+              <div class="preview-item success">
+                <div class="preview-icon">🌾</div>
+                <div class="preview-meta">
+                  <h4>PM Kisan Samman Nidhi</h4>
+                  <p>₹6,000 / year direct bank transfer for farmer families</p>
+                </div>
+              </div>
+
+              <div class="preview-item">
+                <div class="preview-icon">🩺</div>
+                <div class="preview-meta">
+                  <h4>Ayushman Bharat (PM-JAY)</h4>
+                  <p>₹5 Lakh cashless health cover for vulnerable families</p>
+                </div>
+              </div>
+
+              <div class="preview-item amber">
+                <div class="preview-icon">🎓</div>
+                <div class="preview-meta">
+                  <h4>AICTE Pragati Scholarship</h4>
+                  <p>₹50,000 / year support for female technical students</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Checker Section -->
+    <section class="section section-alt" id="checker-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-checkerHeading">Citizen Eligibility Assessment</h2>
+          <p id="txt-checkerSubtitle">
+            Enter your demographic and economic details below. Our transparent engine checks your profile against official scheme criteria in real time without sending your personal data to any external server.
+          </p>
+        </div>
+
+        <div class="checker-box">
+
+          <!-- Sample Quick Fill Bar -->
+          <div class="sample-fill-bar">
+            <span id="txt-trySampleProfiles">⚡ Try Sample Profiles:</span>
+            <div class="sample-fill-buttons">
+              <button type="button" class="btn-sample" id="btn-fill-farmer">
+                <span id="txt-btnFillSample">Fill Sample Profile (Farmer)</span>
+              </button>
+              <button type="button" class="btn-sample" id="btn-fill-student">
+                <span id="txt-btnFillSampleStudent">Fill Sample Profile (Student)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Eligibility Form -->
+          <form id="eligibility-form" novalidate>
+            <div class="form-grid">
+
+              <!-- Full Name (Optional) -->
+              <div class="form-group">
+                <label for="input-name" class="form-label">
+                  <span id="txt-labelName">Full Name (Optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="input-name" 
+                  name="name" 
+                  class="form-input" 
+                  placeholder="e.g. Ramesh Kumar"
+                  autocomplete="name"
+                >
+                <span class="form-help" id="txt-helpName">Used only to personalize your eligibility report.</span>
+              </div>
+
+              <!-- Age -->
+              <div class="form-group">
+                <label for="input-age" class="form-label">
+                  <span><span id="txt-labelAge">Age (in years)</span> <span class="req">*</span></span>
+                </label>
+                <input 
+                  type="number" 
+                  id="input-age" 
+                  name="age" 
+                  class="form-input" 
+                  placeholder="e.g. 28" 
+                  min="0" 
+                  max="100" 
+                  required
+                >
+                <span class="form-help" id="txt-helpAge">Must be a valid age between 0 and 100.</span>
+                <span class="error-text" id="err-age">Please enter a valid age between 0 and 100.</span>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group">
+                <label for="select-gender" class="form-label">
+                  <span><span id="txt-labelGender">Gender</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-gender" name="gender" class="form-select" required>
+                  <option value="" id="opt-selectGender">-- Select Gender --</option>
+                  <option value="Female" id="opt-female">Female</option>
+                  <option value="Male" id="opt-male">Male</option>
+                  <option value="Transgender" id="opt-transgender">Transgender / Other</option>
+                </select>
+                <span class="error-text" id="err-gender">Please select your gender.</span>
+              </div>
+
+              <!-- State / Domicile -->
+              <div class="form-group">
+                <label for="select-state" class="form-label">
+                  <span><span id="txt-labelState">State / Union Territory</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-state" name="state" class="form-select" required>
+                  <option value="" id="opt-selectState">-- Select State / UT --</option>
+                  <!-- Populated dynamically via JS -->
+                </select>
+                <span class="error-text" id="err-state">Please select your state or union territory.</span>
+              </div>
+
+              <!-- Social Category -->
+              <div class="form-group">
+                <label for="select-category" class="form-label">
+                  <span><span id="txt-labelCategory">Social Category</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-category" name="category" class="form-select" required>
+                  <option value="" id="opt-selectCategory">-- Select Category --</option>
+                  <option value="General" id="opt-general">General (Open)</option>
+                  <option value="OBC" id="opt-obc">OBC (Other Backward Class)</option>
+                  <option value="SC" id="opt-sc">SC (Scheduled Caste)</option>
+                  <option value="ST" id="opt-st">ST (Scheduled Tribe)</option>
+                  <option value="EWS" id="opt-ews">EWS (Economically Weaker Section)</option>
+                </select>
+                <span class="error-text" id="err-category">Please select your social category.</span>
+              </div>
+
+              <!-- Occupation -->
+              <div class="form-group">
+                <label for="select-occupation" class="form-label">
+                  <span><span id="txt-labelOccupation">Current Occupation</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-occupation" name="occupation" class="form-select" required>
+                  <option value="" id="opt-selectOccupation">-- Select Occupation --</option>
+                  <option value="Farmer" id="opt-farmer">Farmer / Agriculture</option>
+                  <option value="Student" id="opt-student">Student</option>
+                  <option value="Self-Employed / Entrepreneur" id="opt-selfEmployed">Self-Employed / Entrepreneur</option>
+                  <option value="Salaried Employee" id="opt-salaried">Salaried Employee</option>
+                  <option value="Daily Wage / Informal Worker" id="opt-dailyWage">Daily Wage / Informal Worker</option>
+                  <option value="Unemployed" id="opt-unemployed">Unemployed Youth</option>
+                  <option value="Homemaker" id="opt-homemaker">Homemaker</option>
+                  <option value="Other" id="opt-otherOcc">Other / Gig Worker</option>
+                </select>
+                <span class="error-text" id="err-occupation">Please select your primary occupation.</span>
+              </div>
+
+              <!-- Annual Family Income -->
+              <div class="form-group">
+                <label for="input-income" class="form-label">
+                  <span><span id="txt-labelIncome">Annual Family Income (in ₹ INR)</span> <span class="req">*</span></span>
+                </label>
+                <input 
+                  type="number" 
+                  id="input-income" 
+                  name="annualIncome" 
+                  class="form-input" 
+                  placeholder="e.g. 180000" 
+                  min="0" 
+                  step="1000" 
+                  required
+                >
+                <div class="preset-buttons" aria-label="Income Presets">
+                  <button type="button" class="btn-preset" data-income="120000" id="preset-1">&lt; ₹1.5 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="240000" id="preset-2">&lt; ₹2.5 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="480000" id="preset-3">&lt; ₹5.0 Lakh</button>
+                  <button type="button" class="btn-preset" data-income="750000" id="preset-4">&lt; ₹8.0 Lakh</button>
+                </div>
+                <span class="form-help" id="txt-helpIncome">Total gross family income per year before taxes.</span>
+                <span class="error-text" id="err-income">Please enter a valid positive income figure.</span>
+              </div>
+
+              <!-- Education Level -->
+              <div class="form-group">
+                <label for="select-education" class="form-label">
+                  <span><span id="txt-labelEducation">Highest Education Level</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-education" name="educationLevel" class="form-select" required>
+                  <option value="" id="opt-selectEducation">-- Select Education Level --</option>
+                  <option value="None" id="opt-eduNone">None / Below 10th</option>
+                  <option value="10th Pass" id="opt-edu10th">10th Pass</option>
+                  <option value="12th Pass" id="opt-edu12th">12th Pass</option>
+                  <option value="Diploma / ITI" id="opt-eduDiploma">Diploma / ITI</option>
+                  <option value="Graduate" id="opt-eduGraduate">Graduate (B.A., B.Sc., B.Com., etc.)</option>
+                  <option value="Post-Graduate" id="opt-eduPostGraduate">Post-Graduate or Higher</option>
+                </select>
+                <span class="error-text" id="err-education">Please select your education qualification.</span>
+              </div>
+
+              <!-- Technical Degree Status -->
+              <div class="form-group full-width">
+                <label for="select-technical" class="form-label">
+                  <span><span id="txt-labelTechnicalDegree">Enrolled in or holds an AICTE/UGC Technical Degree / Diploma?</span> <span class="req">*</span></span>
+                </label>
+                <select id="select-technical" name="hasTechnicalDegree" class="form-select" required>
+                  <option value="false" id="opt-techNo">No (General / Humanities / Commerce)</option>
+                  <option value="true" id="opt-techYes">Yes (Engineering, Technology, Polytechnic)</option>
+                </select>
+                <span class="error-text" id="err-technical">Please select technical degree status.</span>
+              </div>
+
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+              <button type="reset" class="btn-reset" id="btn-reset-form">
+                <span id="txt-btnResetForm">Reset Form</span>
+              </button>
+              <button type="submit" class="btn-submit" id="btn-submit-form">
+                <span aria-hidden="true">🔍</span>
+                <span id="txt-btnCheckNow">Check My Scheme Eligibility</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Evaluation Results Display (Revealed upon form submission) -->
+        <div class="results-container" id="results-display" role="region" aria-live="polite">
+          
+          <div style="margin-top: 3.5rem;">
+            <div class="section-header">
+              <h2 id="txt-resultsHeading">Eligibility Evaluation Results</h2>
+              <p id="txt-resultsSubtitle">Based on the details provided, here is your transparent scheme-by-scheme breakdown.</p>
+            </div>
+
+            <!-- Summary Card -->
+            <div class="results-summary-card">
+              <div class="summary-header">
+                <div class="summary-user">
+                  <h3 id="summary-citizen-name">Citizen Profile Assessment</h3>
+                  <p id="summary-citizen-demographics">Demographics & economic indicators evaluated</p>
+                </div>
+                <div class="summary-actions">
+                  <button type="button" class="btn-outline-white" id="btn-print-report">
+                    <span aria-hidden="true">🖨️</span>
+                    <span id="txt-btnPrintReport">Print / Save PDF Report</span>
+                  </button>
+                  <button type="button" class="btn-outline-white" id="btn-modify-details">
+                    <span aria-hidden="true">✏️</span>
+                    <span id="txt-btnEditDetails">Modify Details</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Metric Counts -->
+              <div class="summary-metrics-grid">
+                <div class="metric-card eligible">
+                  <div class="metric-num" id="metric-eligible-count">0</div>
+                  <div class="metric-label" id="txt-tagEligibleCount">Likely Eligible</div>
+                </div>
+                <div class="metric-card partial">
+                  <div class="metric-num" id="metric-partial-count">0</div>
+                  <div class="metric-label" id="txt-tagPartialCount">Partial / Conditional</div>
+                </div>
+                <div class="metric-card ineligible">
+                  <div class="metric-num" id="metric-ineligible-count">0</div>
+                  <div class="metric-label" id="txt-tagIneligibleCount">Currently Ineligible</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mandatory Statutory Preliminary Assessment Disclaimer -->
+            <div class="preliminary-callout" role="alert">
+              <div class="callout-icon" aria-hidden="true">⚠️</div>
+              <div class="callout-body">
+                <h4 id="txt-preliminaryDisclaimerTitle">Preliminary Assessment Notice</h4>
+                <p id="txt-preliminaryDisclaimerText">
+                  This eligibility assessment is calculated purely using transparent rule-based logic matching your self-declared details against official scheme guidelines. <strong>SchemeAI does not guarantee benefits</strong>; formal eligibility, scrutiny of genuine documents, and final sanction are determined solely by the competent Government department upon formal application.
+                </p>
+              </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="results-filter-tabs" role="tablist">
+              <button type="button" class="result-tab-btn active" data-filter="all" id="tab-res-all" role="tab" aria-selected="true">
+                <span id="txt-filterTabAll">All Schemes</span>
+                <span class="tab-badge" id="badge-tab-all">12</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="eligible" id="tab-res-eligible" role="tab" aria-selected="false">
+                <span id="txt-filterTabEligible">Likely Eligible</span>
+                <span class="tab-badge" id="badge-tab-eligible">0</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="partial" id="tab-res-partial" role="tab" aria-selected="false">
+                <span id="txt-filterTabPartial">Partial Match</span>
+                <span class="tab-badge" id="badge-tab-partial">0</span>
+              </button>
+              <button type="button" class="result-tab-btn" data-filter="ineligible" id="tab-res-ineligible" role="tab" aria-selected="false">
+                <span id="txt-filterTabIneligible">Ineligible</span>
+                <span class="tab-badge" id="badge-tab-ineligible">0</span>
+              </button>
+            </div>
+
+            <!-- Schemes Cards Grid -->
+            <div class="schemes-grid" id="evaluated-schemes-container">
+              <!-- Rendered dynamically -->
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Explore All Schemes Section -->
+    <section class="section" id="explore-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-exploreHeading">Explore All Central Government Schemes</h2>
+          <p id="txt-exploreSubtitle">
+            Browse our curated repository of verified flagship schemes across Agriculture, Healthcare, Education, and Welfare.
+          </p>
+        </div>
+
+        <!-- Controls: Search & Category Filter -->
+        <div class="explore-controls-card">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="search" 
+              id="explore-search-input" 
+              class="search-input" 
+              placeholder="Search by scheme name, keyword (e.g. loan, scholarship, farmer)..."
+              aria-label="Search government schemes"
+            >
+          </div>
+
+          <!-- Category Chips -->
+          <div class="category-chips-list" id="explore-category-chips">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Explore Grid -->
+        <div class="schemes-grid" id="explore-schemes-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section section-alt" id="features-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-featHeading">Why SchemeAI?</h2>
+          <p id="txt-featSubtitle">Empowering citizens with explainable, accessible public scheme discovery.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🔍</div>
+            <h3 id="txt-feat1Title">100% Rule Transparency</h3>
+            <p id="txt-feat1Desc">No opaque or fabricated AI outputs. Every recommendation clearly displays the exact rule condition, your entered detail, and why it passed or failed.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🛡️</div>
+            <h3 id="txt-feat2Title">No User Tracking / 100% Free</h3>
+            <p id="txt-feat2Desc">No phone OTPs, no passwords, no fee. Evaluation runs entirely inside your browser, keeping your sensitive economic data confidential.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🏛️</div>
+            <h3 id="txt-feat3Title">Authentic Official Portals</h3>
+            <p id="txt-feat3Desc">Direct outbound links to verified .gov.in, .nic.in, and .org.in official portals. Never fall prey to fake intermediaries or scam agents.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper" aria-hidden="true">🌐</div>
+            <h3 id="txt-feat4Title">Bilingual Experience</h3>
+            <p id="txt-feat4Desc">Easily switch between English and Hindi at any time with a single click without losing your active form details.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about-section">
+      <div class="container">
+        <div class="about-card">
+          <h3 id="txt-aboutHeading">About SchemeAI Initiative</h3>
+          <p id="txt-aboutText1">
+            SchemeAI is an independent citizen-centric project built to bridge the awareness gap between eligible Indian beneficiaries and public welfare schemes.
+          </p>
+          <p id="txt-aboutText2">
+            Every year, thousands of crores in public welfare funds remain underutilized because deserving citizens are unaware of schemes or find eligibility rules convoluted. SchemeAI translates complex ministerial criteria into a simple, actionable digital checker.
+          </p>
+
+          <div class="legal-box">
+            <h4 id="txt-legalDisclaimerTitle">Statutory Disclaimer</h4>
+            <p id="txt-legalDisclaimerText">
+              SchemeAI is a public informational tool. It is NOT affiliated with, authorized by, or an official service of the Government of India or any State Government. Final eligibility, entitlement, and sanction of any scheme are decided exclusively by the competent designated statutory authorities upon formal submission of required applications and authentic documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Citizen Helpdesk Section -->
+    <section class="section section-alt" id="contact-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <h2 id="txt-contactHeading">Contact & Citizen Helpdesk</h2>
+          <p id="txt-contactSubtitle">Have questions, suggestions, or want to report an updated scheme guideline?</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <form id="contact-form" novalidate>
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-name" class="form-label" id="txt-contactName">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" required placeholder="e.g. Ankit Verma">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-email" class="form-label" id="txt-contactEmail">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" required placeholder="e.g. ankit@example.com">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="contact-subject" class="form-label" id="txt-contactSubject">Subject / Scheme Inquiry</label>
+                <input type="text" id="contact-subject" class="form-input" required placeholder="e.g. Query regarding PM-KISAN rules">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="contact-message" class="form-label" id="txt-contactMessage">Your Message</label>
+                <textarea id="contact-message" class="form-input" style="height: 120px; padding: 0.75rem 1rem; resize: vertical;" required placeholder="How can we assist you?"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit" style="width: 100%;">
+                <span id="txt-btnSendMessage">Submit Message</span>
+              </button>
+
+              <div class="contact-success-banner" id="contact-success-box" role="alert">
+                <span id="txt-contactSuccess">Thank you for reaching out! In a live environment, your inquiry is routed to our volunteer support team.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Citizen Helplines -->
+          <div class="contact-info-card">
+            <div class="helplines-card">
+              <h3 id="txt-helplinesTitle">National Citizen Helplines</h3>
+              
+              <div class="helpline-item">
+                <span class="helpline-icon">📞</span>
+                <span id="txt-helpline1">National Consumer Helpline: 1915 / 1800-11-4000</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🩺</span>
+                <span id="txt-helpline2">Ayushman Bharat National Call Centre: 14555</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🌾</span>
+                <span id="txt-helpline3">Kisan Call Centre: 1800-180-1551</span>
+              </div>
+
+              <div class="helpline-item">
+                <span class="helpline-icon">🛡️</span>
+                <span id="txt-helpline4">Cyber Fraud Helpline: 1930</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 750; color: var(--primary-navy); margin-bottom: 0.5rem;">💡 Safe Internet Tips for Citizens</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+                Always verify that government websites end in <strong>.gov.in</strong> or <strong>.nic.in</strong>. Government portals never demand application processing fees through personal UPI handles or QR codes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Detailed Scheme Match Modal -->
+  <div class="modal-overlay" id="scheme-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-scheme-title">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <h3 id="modal-scheme-title">Scheme Name</h3>
+          <p id="modal-scheme-ministry">Ministry / Department</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-btn-close" aria-label="Close dialog">×</button>
+      </div>
+
+      <!-- Modal Tabs -->
+      <div class="modal-tabs" role="tablist">
+        <button type="button" class="modal-tab-btn active" data-tab="criteria" id="modal-tab-criteria" role="tab" aria-selected="true">
+          <span id="txt-modalCriteriaTab">Why This Matches / Fails</span>
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="docs" id="modal-tab-docs" role="tab" aria-selected="false">
+          <span id="txt-modalDocumentsTab">Documents Required</span>
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="disqualifiers" id="modal-tab-disqualifiers" role="tab" aria-selected="false">
+          <span id="txt-modalDisqualifiersTab">Disqualifiers & Rules</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- Tab 1: Criteria Breakdown -->
+        <div class="modal-tab-pane active" id="pane-criteria">
+          <div class="criteria-list" id="modal-criteria-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Required Documents -->
+        <div class="modal-tab-pane" id="pane-docs">
+          <ul class="docs-list" id="modal-docs-container">
+            <!-- Dynamically populated -->
+          </ul>
+        </div>
+
+        <!-- Tab 3: Disqualifiers -->
+        <div class="modal-tab-pane" id="pane-disqualifiers">
+          <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--danger); margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; font-weight: 750; color: var(--danger); margin-bottom: 0.5rem;" id="txt-disqualifiersHeading">Key Disqualification Conditions:</h4>
+            <ul id="modal-disqualifiers-container" style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-main); display: flex; flex-direction: column; gap: 0.4rem;">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 1rem 1.25rem;">
+            <h5 style="font-size: 0.88rem; font-weight: 700; color: #1e40af; margin-bottom: 0.25rem;" id="txt-authorityNoticeTitle">Authoritative Source & Application Timeline:</h5>
+            <p style="font-size: 0.82rem; color: #1e3a8a; margin: 0; line-height: 1.5;" id="modal-source-and-deadline-text"></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-close" id="modal-btn-dismiss">
+          <span id="txt-modalClose">Close</span>
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-apply" id="modal-link-official">
+          <span id="txt-btnApplyOfficial">Official Application Portal</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>SchemeAI</h4>
+          <p id="txt-footerTagline">Transparent Public Scheme Discovery for a Self-Reliant India (AtmaNirbhar Bharat).</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#checker-section">Check Eligibility</a></li>
+          <li><a href="#explore-section">Explore Schemes</a></li>
+          <li><a href="#about-section">Statutory Disclaimer</a></li>
+          <li><a href="#contact-section">Helpdesk</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-bottom">
+        <p id="txt-footerCopy">Built with standard Open Web Technologies (HTML, CSS, JS). Free & Open Access.</p>
+        <a href="#home" id="txt-footerBackToTop">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/schemes-data.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/eligibility-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
